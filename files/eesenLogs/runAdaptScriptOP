@@ -1,0 +1,49 @@
+Looking up pronunciations for new words
+Constructing the phoneme-based lexicon
+Compiling the lexicon and token FSTs
+fstaddselfloops 'echo 47 |' 'echo 152220 |' 
+Dict and token FSTs compiling succeeded
+Generating candidate_oovs.txt
+Not installing the kaldi_lm toolkit since it is already there.
+Getting raw N-gram counts
+discount_ngrams: for n-gram order 1, D=0.000000, tau=0.000000 phi=1.000000
+discount_ngrams: for n-gram order 2, D=0.000000, tau=0.000000 phi=1.000000
+discount_ngrams: for n-gram order 3, D=1.000000, tau=0.000000 phi=1.000000
+Iteration 1/6 of optimizing discounting parameters
+discount_ngrams: for n-gram order 1, D=0.600000, tau=0.675000 phi=2.000000
+discount_ngrams: for n-gram order 2, D=0.800000, tau=0.675000 phi=2.000000
+discount_ngrams: for n-gram order 3, D=0.000000, tau=0.825000 phi=2.000000
+discount_ngrams: for n-gram order 1, D=0.600000, tau=0.900000 phi=2.000000
+discount_ngrams: for n-gram order 2, D=0.800000, tau=0.900000 phi=2.000000
+discount_ngrams: for n-gram order 3, D=0.000000, tau=1.100000 phi=2.000000
+discount_ngrams: for n-gram order 1, D=0.600000, tau=1.215000 phi=2.000000
+discount_ngrams: for n-gram order 2, D=0.800000, tau=1.215000 phi=2.000000
+discount_ngrams: for n-gram order 3, D=0.000000, tau=1.485000 phi=2.000000
+interpolate_ngrams: 152213 words in wordslist
+compute_perplexity: for history-state "", no total-count % is seen
+(perhaps you didn't put the training n-grams through interpolate_ngrams?)
+interpolate_ngrams: 152213 words in wordslist
+
+real	0m0.105s
+user	0m0.060s
+sys	0m0.038s
+compute_perplexity: for history-state "", no total-count % is seen
+(perhaps you didn't put the training n-grams through interpolate_ngrams?)
+
+real	0m0.141s
+user	0m0.052s
+sys	0m0.020s
+interpolate_ngrams: 152213 words in wordslist
+compute_perplexity: for history-state "", no total-count % is seen
+(perhaps you didn't put the training n-grams through interpolate_ngrams?)
+
+real	0m0.179s
+user	0m0.065s
+sys	0m0.035s
+Usage: optimize_alpha.pl alpha1 perplexity@alpha1 alpha2 perplexity@alpha2 alpha3 perplexity@alph3 at /home/vagrant/eesen/tools/kaldi_lm/optimize_alpha.pl line 23.
+Expecting files adapt_lm/3gram-mincount//ngrams_disc and adapt_lm/3gram-mincount//../word_map to exist
+E.g. see egs/wsj/s3/local/wsj_train_lm.sh for examples.
+Finding OOV words in ARPA LM but not in our words.txt
+gzip: adapt_lm/3gram-mincount/lm_pr6.0.gz: No such file or directory
+Composing the decoding graph using our own ARPA LM
+No such file adapt_lm/3gram-mincount/lm_pr6.0.gz

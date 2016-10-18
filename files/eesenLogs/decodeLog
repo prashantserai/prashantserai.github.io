@@ -1,0 +1,19 @@
+# net-output-extract --class-frame-counts=/home/vagrant/eesen/asr_egs/tedlium/v2-30ms/exp/train_phn_l5_c320_v1s/label.counts --apply-log=true /home/vagrant/eesen/asr_egs/tedlium/v2-30ms/exp/train_phn_l5_c320_v1s/final.nnet "ark,s,cs:apply-cmvn --norm-vars=true --utt2spk=ark:build/trans/adamRayTravelTry1/split1/1/utt2spk scp:build/trans/adamRayTravelTry1/split1/1/cmvn.scp scp:build/trans/adamRayTravelTry1/split1/1/feats.scp ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | subsample-feats --n=3 --offset=0 ark:- ark:- |" ark:- | latgen-faster --max-active=5000 --max-mem=50000000 --beam=17.0 --lattice-beam=8.0 --acoustic-scale=0.8 --allow-partial=true --word-symbol-table=/home/vagrant/eesen/asr_egs/tedlium/v2-30ms/data/lang_phn_test_test_newlm/words.txt /home/vagrant/eesen/asr_egs/tedlium/v2-30ms/data/lang_phn_test_test_newlm/TLG.fst ark:- "ark:|gzip -c > build/trans/adamRayTravelTry1/eesen/decode/lat.1.gz" 
+# Started at Wed Oct 12 14:15:15 UTC 2016
+#
+net-output-extract --class-frame-counts=/home/vagrant/eesen/asr_egs/tedlium/v2-30ms/exp/train_phn_l5_c320_v1s/label.counts --apply-log=true /home/vagrant/eesen/asr_egs/tedlium/v2-30ms/exp/train_phn_l5_c320_v1s/final.nnet 'ark,s,cs:apply-cmvn --norm-vars=true --utt2spk=ark:build/trans/adamRayTravelTry1/split1/1/utt2spk scp:build/trans/adamRayTravelTry1/split1/1/cmvn.scp scp:build/trans/adamRayTravelTry1/split1/1/feats.scp ark:- | splice-feats --left-context=1 --right-context=1 ark:- ark:- | subsample-feats --n=3 --offset=0 ark:- ark:- |' ark:- 
+latgen-faster --max-active=5000 --max-mem=50000000 --beam=17.0 --lattice-beam=8.0 --acoustic-scale=0.8 --allow-partial=true --word-symbol-table=/home/vagrant/eesen/asr_egs/tedlium/v2-30ms/data/lang_phn_test_test_newlm/words.txt /home/vagrant/eesen/asr_egs/tedlium/v2-30ms/data/lang_phn_test_test_newlm/TLG.fst ark:- 'ark:|gzip -c > build/trans/adamRayTravelTry1/eesen/decode/lat.1.gz' 
+LOG (net-output-extract:ClassPrior():class-prior.cc:33) Computing class-priors from : /home/vagrant/eesen/asr_egs/tedlium/v2-30ms/exp/train_phn_l5_c320_v1s/label.counts
+apply-cmvn --norm-vars=true --utt2spk=ark:build/trans/adamRayTravelTry1/split1/1/utt2spk scp:build/trans/adamRayTravelTry1/split1/1/cmvn.scp scp:build/trans/adamRayTravelTry1/split1/1/feats.scp ark:- 
+subsample-feats --n=3 --offset=0 ark:- ark:- 
+splice-feats --left-context=1 --right-context=1 ark:- ark:- 
+WARNING (latgen-faster:ProcessNonemitting():lattice-faster-decoder.cc:772) Error, no surviving tokens: frame is 0
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No tokens alive [doing pruning]
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No tokens alive [doing pruning]
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No tokens alive [doing pruning]
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No tokens alive [doing pruning]
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No tokens alive [doing pruning]
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No tokens alive [doing pruning]
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No tokens alive [doing pruning]
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No tokens alive [doing pruning]
+WARNING (latgen-faster:PruneTokensForFrame():lattice-faster-decoder.cc:456) No t

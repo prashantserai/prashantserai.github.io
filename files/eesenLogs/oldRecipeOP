@@ -1,0 +1,49 @@
+Not installing the kaldi_lm toolkit since it is already there.
+Not creating raw N-gram counts ngrams.gz and heldout_ngrams.gz since they already exist in local_lm/3gram-mincount
+(remove them if you want them regenerated)
+Not doing optimization of discounting parameters since
+file local_lm/3gram-mincount/config.6 already exists
+Final config is:
+D=0.6 tau=1.21744253747624 phi=2
+D=0.677700863779375 tau=1.62020916129316 phi=2.21187955205658
+D=0 tau=2.52957505008952 phi=1.5
+Not creating discounted N-grams file local_lm/3gram-mincount/ngrams_disc.gz since it already exists
+Computing final perplexity
+Building ARPA LM (perplexity computation is in background)
+interpolate_ngrams: 152213 words in wordslist
+interpolate_ngrams: 152213 words in wordslist
+Perplexity over 182489.000000 words is 199.721838
+Perplexity over 180887.000000 words (excluding 1602.000000 OOVs) is 202.984576
+199.721838
+Done training LM of type 3gram-mincount
+Not creating discounted N-gram file local_lm/3gram-mincount//ngrams_disc_pr6.0.gz
+since it already exists.
+Computing pruned perplexity
+After pruning, number of N-grams is 146629
+Building ARPA LM (perplexity computation is in background)
+interpolate_ngrams: 152213 words in wordslist
+interpolate_ngrams: 152213 words in wordslist
+Perplexity over 182489.000000 words is 235.664493
+Perplexity over 180887.000000 words (excluding 1602.000000 OOVs) is 239.705212
+235.664493
+ARPA output is in local_lm/3gram-mincount//lm_pr6.0.gz
+Done pruning LM with threshold 6.0
+vagrant@vagrant-ubuntu-trusty-64:~/eesen/asr_egs/tedlium/v2-30ms/lm_build$ cd ..vagrant@vagrant-ubuntu-trusty-64:~/eesen/asr_egs/tedlium/v2-30ms$ ls
+cmd.sh  data  exp       local    RESULTS         steps
+conf    db    lm_build  path.sh  run_ctc_phn.sh  utils
+vagrant@vagrant-ubuntu-trusty-64:~/eesen/asr_egs/tedlium/v2-30ms$ ls data
+lang_phn_test  lang_phn_test_test_newlm  local
+vagrant@vagrant-ubuntu-trusty-64:~/eesen/asr_egs/tedlium/v2-30ms$ lm_build/utils/decode_graph_newlm.sh data/lang_phn_test
+Running locally
+Preparing language models for testing, may take some time ... 
+arpa2fst - 
+Processing 1-grams
+Processing 2-grams
+Processing 3-grams
+Connected 0 states without outgoing arcs.
+remove_oovs.pl: removed 41305 lines.
+fsttablecompose data/lang_phn_test/L.fst data/lang_phn_test_test_newlm/G.fst 
+fstminimizeencoded 
+fstdeterminizestar --use-log=true 
+fsttablecompose data/lang_phn_test/T.fst data/local/graph_tmp/LG.fst 
+Composing decoding graph TLG.fst succeeded
